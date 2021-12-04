@@ -65,19 +65,14 @@ function updateFilters() {
   
     // 9. Loop through all of the filters and keep any data that
     // matches the filter values
-
-    
-    console.log(filters)
-    filteredData = filteredData.filter(item => {
-      // for ... in iterates over the keys
-      for (let ke in filters) {
-        if (item[ke] === undefined || item[ke] != filters[ke])
-        return false;
-       }
-      return true;
-    });
-
-    console.log(filteredData)
+    filteredData = filteredData.filter(row => row.datetime === filters.datetime);
+    filteredData1 = filteredData.filter(row => row.city === filters.city);
+    filteredData2 = filteredData.filter(row => row.state === filters.state);
+    filteredData3 = filteredData.filter(row => row.country === filters.country);
+    filteredData4 = filteredData.filter(row => row.shape === filters.shape);
+    Object.assign(filteredData, filteredData1, filteredData2, filteredData3, filteredData4);
+    filteredDta = filteredData.filter(row=> row.keys === filters.keys)
+    console.log(filteredData[1])
 
     
     // 10. Finally, rebuild the table using the filtered data

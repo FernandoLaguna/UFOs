@@ -6,24 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!--link to Bootstrap's-->
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+    <!--link to our stylesheet-->
     <link rel="stylesheet" href="static/css/style.css">
 </head>
-<body>
-    <!-- wrapper class  helps group the elements (e.g., title, paragraph, table, and filters) and specifies the styling in our stylesheet-->
+<body class="bg-dark">
+    <!-- wrapper class  helps group the elements (e.g., title, paragraph, table, and as) and specifies the styling in our stylesheet-->
     <div class="wrapper">
-        <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand" href="index.html">UFO Sightings</a>
+        <!--"navbar" indicates Bootstrap a component that fits across the top of the page. "navbar-expand-lg" provides extra responsiveness-->
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+            <!--"navbar-brand" (less styling to worry about later), href points to the UFO finder.html file we're working on-->
+            <a class="navbar-brand" href="UFO finder.html">UFO Sightings</a>
         </nav>
 
     </div>
+    <!--add a jumbotron. class = display 4 is a format-->
     <div class="jumbotron">
-        <h1>The Truth Is Out There</h1>
+      <h1 class="display-4">The Truth is Out There</h1>
     </div>
     <!--"container-fluid"  ensure that both elements we're adding will span the width of the viewport-->
     <div class="container-fluid">
@@ -45,25 +50,33 @@
         <div class="row">
           <div class="col-md-3">
             <!--First, we'll add a form tag, then build the form by nesting additional elements within it-->
-            <form>
+            <form class="bg-dark">
                 <p>Filter Search</p>
                 <!--starting an unordered list. We're going to give this a class of "list-group.-->
-                <ul class="list-group">
+                <ul class="list-group bg-dark">
                     <!--add the list items-->
-                    <li class="list-group-item">
+                    <li class="list-group-item bg-dark">
                         <!--This label represents a caption for the date item. The text Enter Date serves as the actual label-->
                         <label for="date">Enter Date</label>
                         <!--The type="text" means that the code will look for text to be input.
                         The placeholder is an example of a date to search, so users know both the location and the format to use when inputting a date.
                         The id="datetime" is what our JavaScript code will look for when the button is clicked and the function is executed.-->
                         <input type="text" placeholder="1/10/2010" id="datetime" />
+                    <li class="list-group-item bg-dark">
+                        <label for="cities">Enter a City</label>
+                        <input type="text" placeholder="roswell" id="city" />
                     </li>
-                    <li class="list-group-item">
-                        <!--When button is clicked, the input is picked up by our JavaScript code and then applied to the filter.
-                        type="button" - the button does nothing. our custom JavaScript script will overwrite the default behavior—as if the button is waiting for instruction.
-                        The class="btn btn-default" attribute adds some Bootstrap styling to the mix to help keep the element neat and tidy. 
-                        Finally, we've named our button "Filter Table," by nesting it between the opening and closing button tags.-->
-                        <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button>
+                    <li class="list-group-item bg-dark">
+                      <label for="states">Enter a State</label>
+                      <input type="text" placeholder="ca" id="state" />
+                    </li>
+                    <li class="list-group-item bg-dark">
+                      <label for="countries">Enter a Country</label>
+                      <input type="text" placeholder="us" id="country" />
+                    </li>
+                    <li class="list-group-item bg-dark">
+                      <label for="shapes">Enter a Shape</label>
+                      <input type="text" placeholder="light" id="shape" />
                     </li>
         
                   </ul>
